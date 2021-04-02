@@ -272,5 +272,37 @@ namespace arvorebin
 		}
 
 
+public int Buscar(int info)
+		{
+			if (this.Buscar(info, this.raiz) != null){
+				return 1;
+		    }else{
+				return 0;
+			}
+		}
+
+		public No Buscar(int info, No no)
+		{
+			if(no==null){
+				
+				return no;
+
+			}else{
+				if (info == no.info){
+
+				    return no;
+
+				}else{
+					if(info < no.info){
+						return Buscar(info, no.noEsquerdo);
+					}else{
+                        return Buscar(info, no.noDireito);
+					}
+				}
+			} 
+			
+		}
+				
+
 	}
 }
